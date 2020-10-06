@@ -7,7 +7,9 @@
   top: 50%;
   transform: translateY(-50%);
 }
-
+ion-content {
+  --background: url(../../assets/MiAppiario.png) no-repeat center/cover fixed;
+}
 #container strong {
   font-size: 20px;
   line-height: 26px;
@@ -25,3 +27,22 @@
 #container a {
   text-decoration: none;
 }
+
+.botonR{
+  position: fixed;
+ // right: 0;
+  bottom: 0;
+  top: 300px;
+  margin:100px;
+  text-align: center;
+}
+
+.botonL{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  top: 340px;
+  margin:114px;
+  text-align: center;
+}
+
