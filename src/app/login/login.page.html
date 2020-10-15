@@ -3,7 +3,8 @@
    <ion-buttons slot="start"> 
       <ion-back-button> </ion-back-button>
     </ion-buttons>
-      <ion-title>Usuario</ion-title>
+      <ion-title>Usuario<ion-icon size= "large" name="person-circle-outline"></ion-icon></ion-title>
+      
   </ion-toolbar>
 </ion-header>
 
@@ -21,7 +22,7 @@
 
     <ion-row>
       <ion-col>
-        <ion-button type="submit" color="dark" expand="block">Ingresar</ion-button>
+        <ion-button [routerLink]="['/colmenar']" type="submit" color="dark" expand="block">Ingresar</ion-button>
         <a [routerLink]="['/forgot-password']" class="small-text">¿Olvidó su contraseña?</a>
       </ion-col>
     </ion-row>

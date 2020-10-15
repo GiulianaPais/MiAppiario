@@ -23,6 +23,27 @@ const routes: Routes = [
     path: 'forgot-password',
     loadChildren: () => import('./forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
   },
+  {
+
+   // path: 'colmenar',
+   // loadChildren: () => import('./colmenar/colmenar.module').then(m => m.ColmenarPageModule)
+    
+    
+   path: 'colmenar',
+    children: [{
+      path: "", 
+      loadChildren: () => import('./colmenar/colmenar.module').then( m => m.ColmenarPageModule)
+    },
+    {
+      path: ":id", 
+      loadChildren: () => import('./apiario/apiario.module').then( m => m.ApiarioPageModule)
+    }]
+    
+  },
+  {
+    path: 'apiario',
+    loadChildren: () => import('./apiario/apiario.module').then( m => m.ApiarioPageModule)
+  },
 ];
 
 @NgModule({
