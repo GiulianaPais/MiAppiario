@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiarioService } from '../service/apiario.service'; 
 
 @Component({
   selector: 'app-colmenar',
@@ -7,47 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ColmenarPage {
   
-  private apiarios = [{
-    "id": 1,
-    "nombre": "María Luisa 1",
-    "Cantidad": 0,
-    "Débiles": 0,
-    "Muertas": 0,
-    "Causa de muerte": "string",
-    //fecha 
-    "M/A-colocadas": 0,
-    "A-colocadas": 0,
-    "Alimetadores": 0,
-    "M/A-apilada": 0,
-    "A-apilada": 0,
-    "Mallas": 0,
-    "C/enjambre": 0,
-    "Atrapadas": 0,
-    //"imagen": 
-
-    
-  },
-    {
-      "id": 2,
-      "nombre": "María Luisa 2",
-      "Cantidad": 0,
-      "Débiles": 0,
-      "Muertas": 0,
-      "Causa de muerte": "string",
-      //fecha 
-      "M/A-colocadas": 0,
-      "A-colocadas": 0,
-      "Alimetadores": 0,
-      "M/A-apilada": 0,
-      "A-apilada": 0,
-      "Mallas": 0,
-      "C/enjambre": 0,
-      "Atrapadas": 0,
-      //"imagen": 
-    }
-  ]
+  private apiarios; 
   
-  constructor() { }
+  constructor(private apiSrv: ApiarioService) {
+    this.apiarios = apiSrv.obtenerTodos();
+   }
 
 
   ngOnInit() {

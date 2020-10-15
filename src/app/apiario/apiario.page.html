@@ -1,13 +1,49 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header [translucent]="true">
+  <ion-toolbar color="warning">
+    
+    <ion-title>{{apiario.nombre}}</ion-title>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref= "/colmenar" ></ion-back-button>
+      <ion-back-button defaultHref="/colmenar"></ion-back-button>
     </ion-buttons>
     
-    <ion-title>Apiario</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
 
-</ion-content>
+    <ion-item>
+      <div class="contenedor">
+        <ion-img [src]="apiario.imagen"></ion-img>
+       
+      </div>
+    </ion-item>
+    <ion-content>
+      <ion-item>
+        <ion-text color="dark">
+          <h6>Ubicación: {{apiario.ubicacion}} </h6>
+          <h6>Coordenadas: {{apiario.coord}} </h6>
+          
+
+  </ion-text>
+</ion-item>
+<ion-item >
+  <ion-icon color="warning"  name="folder"></ion-icon>
+  <ion-text color="warning">
+  <h4>Carga de datos</h4>
+</ion-text>
+</ion-item>
+
+<ion-item>
+  <ion-label >Cantidad:</ion-label>
+  <ion-input class="colorFondo"  type="number" placeholder="({{apiario.cantidad}} colmenas vivas)"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label >Débiles:</ion-label>
+  <ion-input class="colorFondo"  type="number" placeholder="({{apiario.debiles}} colmenas)"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label >Muertas:</ion-label>
+  <ion-input class="colorFondo"  type="number" placeholder="({{apiario.muertas}} colmenas)"></ion-input>
+</ion-item>
+
