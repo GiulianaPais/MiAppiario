@@ -7,47 +7,17 @@ import { HttpClient } from '@angular/common/http';
 })
   
 export class ApiarioService {
-  private apiarios: Array<Apiario>= [{
-    "id": "1",
-    "nombre": "María Luisa 1",
-    "cantidad": 0,
-    "debiles": 0,
-    "muertas": 0,
-    "ubicacion": "Tostado, Santa Fe",
-    "coord": "-29.2862, -61.7766",
-    "imagen": "../../assets/ML1.png",
   
-  
-    
-
-    
-  },
-    {
-      "id": "2",
-      "nombre": "María Luisa 2",
-      "cantidad": 0,
-      "debiles": 0,
-      "muertas": 0,
-      "ubicacion": "Tostado, Santa Fe",
-      "coord": "-29.3040, -60.3040",
-      "imagen": "../../assets/ML2.png",
-    
-    }
-  ]
 
   constructor(private httpClien:HttpClient) { }
   public obtenerTodos() {
-    return this.apiarios;
+    return this.httpClien.get<Apiario[]>("http://localhost:3000/apiarios");
   }
   public obtenerPorId(id: string) {
-    for (let api of this.apiarios) {
-      if (api.id == id) {
-        return api;
-      }
-    }
+    return this.httpClien.get<Apiario>("http://localhost:3000/apiarios"+id);
   }
-  public agregar(api: Apiario) {
-    this.apiarios.push(api);
-  }
+  //public agregar(api: Apiario) {
+    //this.apiario.push(api);
+ // }
 
 }

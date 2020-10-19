@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiarioService } from '../service/apiario.service'; 
-
+import { AlertController, LoadingController } from '@ionic/angular';
 @Component({
   selector: 'app-colmenar',
   templateUrl: './colmenar.page.html',
@@ -15,7 +15,12 @@ export class ColmenarPage {
    }
 
 
-  ngOnInit() {
+  public async ngOnInit() {
+    this.apiSrv.obtenerTodos().subscribe(datos => {
+      
+      this.apiarios = datos
+     // loading.dismiss();
+    });
   }
 
 }
