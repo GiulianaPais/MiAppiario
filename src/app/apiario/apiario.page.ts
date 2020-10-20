@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Apiario } from '../model/apiario';
 import { ApiarioService } from '../service/apiario.service';
-//import { Apiario } from '../model/apiario';
+
 
 @Component({
   selector: 'app-apiario',
@@ -9,10 +10,11 @@ import { ApiarioService } from '../service/apiario.service';
   styleUrls: ['./apiario.page.scss'],
 })
 export class ApiarioPage implements OnInit {
-  private apiario;
+  private apiario = new Apiario();
 
 
-  constructor(private activeteRoute: ActivatedRoute, private apiSrv: ApiarioService
+  constructor(private activeteRoute: ActivatedRoute, 
+    private apiSrv: ApiarioService
   ) { }
 
  
@@ -20,10 +22,10 @@ export class ApiarioPage implements OnInit {
   ngOnInit() {
     this.activeteRoute.paramMap.subscribe(
       paramMap => {
-        this.apiario= this.apiSrv.obtenerPorId(paramMap.get("id"));
-        //  .subscribe(datos => {
-        //    this.apiario = datos;
-        //  });
+        this.apiSrv.obtenerPorId(paramMap.get("id"))
+          .subscribe(datos => {
+            this.apiario = datos;
+          });
     });
   }
 

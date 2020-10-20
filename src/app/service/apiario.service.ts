@@ -10,11 +10,12 @@ export class ApiarioService {
   
 
   constructor(private httpClien:HttpClient) { }
+  
   public obtenerTodos() {
     return this.httpClien.get<Apiario[]>("http://localhost:3000/apiarios");
   }
   public obtenerPorId(id: string) {
-    return this.httpClien.get<Apiario>("http://localhost:3000/apiarios"+id);
+    return this.httpClien.get<Apiario>("http://localhost:3000/apiarios/"+id);
   }
   //public agregar(api: Apiario) {
     //this.apiario.push(api);
