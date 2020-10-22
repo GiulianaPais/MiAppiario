@@ -11,7 +11,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fulscreen]= "true">
+<ion-content [fullscreen]= "true">
   <ion-list  >
     <ion-item  *ngFor="let api of apiarios" [routerLink]="['/colmenar',api.id]">
       <ion-label color ="dark" ><strong>{{api.nombre}}</strong></ion-label>

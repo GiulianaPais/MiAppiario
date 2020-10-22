@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, GuardsCheckStart } from '@angular/router';
+import { NavController, NavParams } from '@ionic/angular';
 import { Apiario } from '../model/apiario';
 import { ApiarioService } from '../service/apiario.service';
 
@@ -14,8 +15,11 @@ export class ApiarioPage implements OnInit {
 
 
   constructor(private activeteRoute: ActivatedRoute, 
-    private apiSrv: ApiarioService
-  ) { }
+    private apiSrv: ApiarioService,
+    private navCtrl:NavController,
+  ) { 
+   
+   }
 
  
 
@@ -28,5 +32,20 @@ export class ApiarioPage implements OnInit {
           });
     });
   }
-
+  onGuardar(){
+    
+    this.apiSrv.editarApiario(this.apiario)
+    .subscribe(
+      
+      datos=> console.log ("Datos actualizados"),
+      er=> console.log (er),
+      () => console.log ("Terminado")
+    )
+  
+  }
+  onCancelar(){
+    this.navCtrl.pop();
+  }
 }
+
+

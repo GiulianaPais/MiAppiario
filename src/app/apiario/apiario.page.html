@@ -33,16 +33,28 @@
 
 <ion-item>
   <ion-label >Cantidad:</ion-label>
-  <ion-input class="colorFondo"  type="number" placeholder="({{apiario.cantidad}} colmenas vivas)"></ion-input>
+  <ion-input class="colorFondo"  type="number" [(ngModel)]="apiario.cantidad"></ion-input>
 </ion-item>
 
 <ion-item>
   <ion-label >Débiles:</ion-label>
-  <ion-input class="colorFondo"  type="number" placeholder="({{apiario.debiles}} colmenas)"></ion-input>
+  <ion-input class="colorFondo"  type="number" [(ngModel)]="apiario.debiles"></ion-input>
 </ion-item>
 
 <ion-item>
   <ion-label >Muertas:</ion-label>
-  <ion-input class="colorFondo"  type="number" placeholder="({{apiario.muertas}} colmenas)"></ion-input>
+  <ion-input class="colorFondo"  type="number" [(ngModel)]="apiario.muertas"></ion-input>
 </ion-item>
 
+<ion-row no- padding>
+  <ion-col text right>
+    <ion-button clear small color= "warning" (click)="onGuardar()">
+      Guardar
+    </ion-button>
+  </ion-col>
+  <ion-col text-right>
+  <ion-button clear small color="dark" (click)="onCancelar()" >
+    Cancelar
+  </ion-button>
+</ion-col>
+</ion-row>

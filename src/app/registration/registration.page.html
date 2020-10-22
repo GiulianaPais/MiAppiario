@@ -11,33 +11,33 @@
   
     <ion-item lines="full">
       <ion-label position="floating">Nombre<ion-text color="danger">*</ion-text></ion-label>
-      <ion-input [{ngModel}]="nombre" type="text" required></ion-input>
+      <ion-input [(ngModel)]="nombre" type="text" required></ion-input>
     </ion-item>
 
     <ion-item lines="full">
       <ion-label position="floating">Apellido<ion-text color="danger">*</ion-text></ion-label>
-      <ion-input  [{ngModel}]="apellido" type="text" required></ion-input>
+      <ion-input  [(ngModel)]="apellido" type="text" required></ion-input>
     </ion-item>
 
     <ion-item lines="full">
       <ion-label position="floating">E-mail<ion-text color="danger">*</ion-text></ion-label>
-      <ion-input [{ngModel}]="correo" type="email" required></ion-input>
+      <ion-input [(ngModel)]="correo" type="email" required></ion-input>
     </ion-item>
 
     <ion-item lines="full">
       <ion-label position="floating">Contraseña<ion-text color="danger">*</ion-text></ion-label>
-      <ion-input [{ngModel}]="contrasenia" type="password" required></ion-input>
+      <ion-input [(ngModel)]="contrasenia" type="password" required></ion-input>
     </ion-item>
     
     <ion-item lines="full">
       <ion-label position="floating">Repetir contraseña<ion-text color="danger">*</ion-text></ion-label>
-      <ion-input [{ngModel}]="repcontrasenia" type="password" required></ion-input>
+      <ion-input [(ngModel)]="repcontrasenia" type="password" required></ion-input>
     </ion-item>
 
 
     <ion-row>
       <ion-col>
-        <ion-button (click)="MostrarAlerta()" type="submit" color="dark" expand="block">Ingresar</ion-button>
+        <ion-button (click)="MostrarAlerta()" [routerLink]="['/colmenares']" type="submit" color="dark" expand="block">Ingresar</ion-button>
       </ion-col>
     </ion-row>
   

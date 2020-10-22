@@ -12,17 +12,17 @@
   <form>
     <ion-item lines="full">
       <ion-label position="floating" >E-mail<ion-text color="danger">*</ion-text></ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-input type="text"  [(ngModel)]="usuario.email" name=" email" ></ion-input>
     </ion-item>
 
     <ion-item lines="full">
       <ion-label position="floating">Contraseña<ion-text color="danger">*</ion-text></ion-label>
-      <ion-input type="password" required></ion-input>
+      <ion-input  type="password"  [(ngModel)]="usuario.password" name="password " ></ion-input>
     </ion-item>
 
     <ion-row>
       <ion-col>
-        <ion-button [routerLink]="['/colmenar']" type="submit" color="dark" expand="block">Ingresar</ion-button>
+        <ion-button (click)= "ingresar()"[routerLink]="['/colmenar']" type="submit" color="dark" expand="block">Ingresar</ion-button>
         <a [routerLink]="['/forgot-password']" class="small-text">¿Olvidó su contraseña?</a>
       </ion-col>
     </ion-row>
